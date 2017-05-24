@@ -90,7 +90,7 @@ do
             updatePhaseForNextStep();
             --set the gpio pins according to combination for self phase (which is one of the 8 phases)
             for index,mcu_pin in ipairs(motor_params.pins) do
-                gpio.mode(mcu_pin, PHASE_GPIO_DATA[phase][index])
+                gpio.write(mcu_pin, PHASE_GPIO_DATA[phase][index])
             end
         end
     end
