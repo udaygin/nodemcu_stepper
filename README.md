@@ -31,11 +31,14 @@ since this is a single module file, I suggest raw file download for stepper.lua 
 
 #### Connections 
 
-NODEMCU --- ULN2003
-D5 < ------ > IN1
-D6 < ------ > IN2
-D7 < ------ > IN3
-D8 < ------ > IN4
+Any nodemcu gpio pins shoud work. here is the combination that worked for me. 
+
+| NODEMCU | ULN2003 |
+| ------------- | ------------- |
+| D5 | IN1 |
+| D6 | IN2 |
+| D7 | IN3 |
+| D8 | IN4 |
 
 **TODO : Insert pic here**
 
