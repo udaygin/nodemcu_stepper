@@ -41,10 +41,10 @@ Any nodemcu gpio pins shoud work. here is the combination that worked for me.
 
 **TODO : Insert Connection/circuit diagram here**
 
-### Compilation 
+#### Compilation 
 THis is a big module. It takes a lot of your esp8266's precious memory. I suggest you compile this in to a .lc file to reduce memory consumption. 
 
-#### load 
+#### Loading module 
 load the lua module in your main program 
 ```lua
 stepper  = require ('stepper')
