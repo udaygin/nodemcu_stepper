@@ -7,7 +7,7 @@ stepper  = require ('stepper')
 stepper.init({5,6,7,8})
 stepper.rotate(stepper.FORWARD,2500,5,0,function () print('Rotation done.') end)
 ```
-
+As you can see, your code trigger rotate and let the module finish rotation and trigger callback. 
 
 ### Background
 I needed a simple lua module that I can use to drive the cheap 28BYJ-48 & ULN2003 Combo.  
