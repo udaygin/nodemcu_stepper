@@ -39,7 +39,6 @@ Any nodemcu gpio pins shoud work. here is the combination that worked for me.
 | D7 | IN3 |
 | D8 | IN4 |
 
-**TODO : Insert Connection/circuit diagram here
 ![Alt text](Stepper_Connection_bb.png?raw=true "Nodemcu stepper connection diagram(for above pin mapping)")
 
 #### Compilation 
