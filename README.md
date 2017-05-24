@@ -10,18 +10,17 @@ stepper.rotate(stepper.FORWARD,2500,5,0,function () print('Rotation done.') end)
 As you can see, your code trigger rotate and let the module finish rotation and trigger callback. 
 
 ### Background
-I needed a simple lua module that I can use to drive the cheap 28BYJ-48 & ULN2003 Combo.  
+
+I needed a simple lua module (with callbacks) that I can use to drive the cheap [ 28BYJ-48 & ULN2003 Combo](http://www.dx.com/p/dmdg-uln2003-stepper-motor-driver-module-5v-28byj-48-stepper-motor-for-arduino-349659#.WSWFznV97qw). I did search online around to see if there is a readymade one available. when I couldnt find any exact matches, Just wrote this based on bits and pieces I found online. Hope you find it useful. Feel free create issue or get in touch with me for any feature requests. 
+
+
 **TODO : Insert pic here**
 Fig: 28BYJ-48 & ULN2003 Combo
 
-This is the item that I am talking about 
-http://www.dx.com/p/dmdg-uln2003-stepper-motor-driver-module-5v-28byj-48-stepper-motor-for-arduino-349659#.WSWFznV97qw
 
 Here are two good links that helped me understand how to get the stepper working 
 https://www.geeetech.com/wiki/index.php/Stepper_Motor_5V_4-Phase_5-Wire_%26_ULN2003_Driver_Board_for_Arduino
 http://chilipeppr2.blogspot.in/2016/10/controlling-byj48-stepper-motor-from.html
-
-I did search online around to see if there is a readymade one available. when I couldnt find any exact matches, Just wrote this.
 
 
 ### Download 
@@ -40,7 +39,7 @@ Any nodemcu gpio pins shoud work. here is the combination that worked for me.
 | D7 | IN3 |
 | D8 | IN4 |
 
-**TODO : Insert pic here**
+**TODO : Insert Connection/circuit diagram here**
 
 ### Compilation 
 THis is a big module. It takes a lot of your esp8266's precious memory. I suggest you compile this in to a .lc file to reduce memory consumption. 
