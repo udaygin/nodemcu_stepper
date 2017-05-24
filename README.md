@@ -1,6 +1,6 @@
 # nodemcu_stepper
-Nodemcu(esp8266) lua module to simplify driving a unipolar stepper motor 28BYJ-48 when using ULN2003 Driver
-with this module you can drive a stepper motor in 3 lines like this 
+Nodemcu(esp8266) lua module to simplify driving a unipolar stepper motor 28BYJ-48 when using ULN2003 Driver.
+With this module you can drive a stepper motor in 3 lines like this 
 
 ```lua
 stepper  = require ('stepper')
