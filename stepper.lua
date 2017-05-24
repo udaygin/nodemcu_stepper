@@ -119,6 +119,8 @@ do
                 motor_params.pins[i]=pin;
             end
         end
+        step_counter  = 0
+        phase         = 1
     end
 
     -- rotates motor in a given direction. takes a callback to call once the rotation is done
@@ -132,6 +134,10 @@ do
         motor_params.direction = direction
         motor_params.timer_to_use = timer_to_use
         motor_params.callback = callback
+        
+        step_counter  = 0
+        phase         = 1
+        
         tmr.alarm(motor_params.timer_to_use, motor_params.step_interval, REPEATING_TIMER, single_step)
     end
 
