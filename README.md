@@ -39,7 +39,8 @@ Any nodemcu gpio pins shoud work. here is the combination that worked for me.
 | D7 | IN3 |
 | D8 | IN4 |
 
-**TODO : Insert Connection/circuit diagram here**
+**TODO : Insert Connection/circuit diagram here
+![Alt text](Stepper_Connection_bb.png?raw=true "Nodemcu stepper connection diagram(for above pin mapping)")
 
 #### Compilation 
 THis is a big module. It takes a lot of your esp8266's precious memory. I suggest you compile this in to a .lc file to reduce memory consumption. 
