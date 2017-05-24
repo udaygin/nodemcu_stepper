@@ -46,13 +46,13 @@ THis is a big module. It takes a lot of your esp8266's precious memory. I sugges
 
 #### load 
 load the lua module in your main program 
-```
+```lua
 stepper  = require ('stepper')
 ```
 #### initailization 
 initialize the module with necessary variables 
 parameters : table with 4 nodemcu pins that are connected to ULN2003, for exmaple, {5,6,7,8} is expected if uln2003 motor driver is connected as mentioned in Connections section. 
-```
+```lua
 pins = {5,6,7,8}
 stepper.init(pins)
 ```
@@ -62,15 +62,18 @@ Once the initalization is done, you can call rotate method like this. On success
 Note : this is a async method. It'll trigger rotation and return immediately. 
 
 ##### Signature : 
-`rotate( direction, desired_steps, interval, timer_to_use, callback)`
+```lua
+rotate( direction, desired_steps, interval, timer_to_use, callback)
+```
 
-##### Rotation Parameters : 
+##### Parameters : 
 **direction :** _stepper.FORWARD or stepper.REVERSE_
 **desired_steps :**  _number between 0 to infinity - 2500 is default which is roughly half a rotation_ 
 **interval :** _time delay in milliseconds between steps, smaller self number is, faster the motor rotates . 5 is default_
 **timer_to_use :** _which nodemcu timer to use, 0 is default_
 **callback :** _callback to invoke on completion of given rotation
-###### Rotation Example  : 
+
+###### Example  : 
 ```lua
 direction = stepper.FORWARD 
 desired_steps = 2500 
@@ -83,7 +86,7 @@ stepper.rotate(direction,desired_steps,interval,timer_to_use,function ()
 ```
 ##### Full example 
 
-```
+```lua
 stepper  = require ('stepper')
 stepper.init({5,6,7,8})
 stepper.rotate(stepper.FORWARD,2500,5,0,function () print('Rotation done.') end)
