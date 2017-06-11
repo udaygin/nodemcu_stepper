@@ -11,7 +11,7 @@ As you can see, your code trigger rotate and let the module finish rotation and 
 
 ### Background
 
-I needed a simple lua module (with callbacks) that I can use to drive the cheap [ 28BYJ-48 & ULN2003 Combo](http://www.dx.com/p/dmdg-uln2003-stepper-motor-driver-module-5v-28byj-48-stepper-motor-for-arduino-349659#.WSWFznV97qw). I did search online around to see if there is a readymade one available. when I couldnt find any exact matches, Just wrote this based on bits and pieces I found online. Hope you find it useful. Feel free create issue or get in touch with me for any feature requests. 
+I needed a simple lua module (with callbacks) that I can use to drive the cheap [ 28BYJ-48 & ULN2003 Combo](http://www.dx.com/p/dmdg-uln2003-stepper-motor-driver-module-5v-28byj-48-stepper-motor-for-arduino-349659#.WSWFznV97qw). I did search online around to see if there is a readymade one available. when I couldnt find any exact matches, Just wrote this based on bits and pieces I found online. Hope you find it useful. Feel free create a issue or get in touch with me for any feature requests. 
 
 
 **TODO : Insert pic here**
