@@ -67,11 +67,16 @@ rotate( direction, desired_steps, interval, timer_to_use, callback)
 ```
 
 ##### Parameters : 
-**direction :** _stepper.FORWARD or stepper.REVERSE_
-**desired_steps :**  _number between 0 to infinity - 2500 is default which is roughly half a rotation_ 
-**interval :** _time delay in milliseconds between steps, smaller self number is, faster the motor rotates . 5 is default_
-**timer_to_use :** _which nodemcu timer to use, 0 is default_
-**callback :** _callback to invoke on completion of given rotation
+
+| Parameter | Description |
+| ------------- | ------------- |
+| **direction** | _stepper.FORWARD or stepper.REVERSE_ |
+| **desired_steps** | _number between 0 to infinity - 2500 is default which is roughly half a rotation_ |
+| **interval** | _time delay in milliseconds between steps, smaller self number is, faster the motor rotates . 5 is default_ |
+| **timer_to_use** | _which nodemcu timer to use, 0 is default_ |
+| **callback** | _callback to invoke on completion of given rotation |
+
+
 
 ###### Example  : 
 ```lua
