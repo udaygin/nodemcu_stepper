@@ -36,6 +36,7 @@ do
     -- motor configuration data
     ---------------------------------------------------------------------------------------
     local motor_params = {}
+    local motor_timer = tmr.create()
 
     -- nodemcu pin numbers on which to motor is connected
     motor_params.pins = {5,6,7,8}
@@ -47,7 +48,6 @@ do
     motor_params.step_interval = 5 -- milliseconds decides the speed. smaller the interval, higher the speed.
     motor_params.desired_steps = 2500
     motor_params.direction = FORWARD
-    motor_params.timer_to_use = 0
     motor_params.callback = nil
 
 
@@ -84,7 +84,10 @@ do
         --increment the counter and check if there are steps to execute
         step_counter = step_counter + 1
         if step_counter > motor_params.desired_steps then
-            tmr.stop(motor_params.timer_to_use)
+            motor_timer:stop()
+            for index,mcu_pin in ipairs(motor_params.pins) do
+                gpio.write(mcu_pin, gpio.LOW)
+            end
             node.task.post(2, motor_params.callback) -- node.task.HIGH_PRIORITY = 2
         else
             updatePhaseForNextStep();
@@ -108,7 +111,7 @@ do
         -- D8 < ------ > IN4
     local init = function ( pins )
         if not pins or not interval then
-            print('Init params missing !!! initializing with defaults')
+            --print('Init params missing !!! initializing with defaults')
             local motor_pins = motor_params.pins;
             for i,pin in ipairs( motor_pins ) do
                 gpio.mode(pin, gpio.OUTPUT)
@@ -128,17 +131,17 @@ do
         -- direction = stepper.FORWARD or stepper.REVERSE
         -- desired_steps = number between 0 to infinity - 2500 is default
         -- interval = time delay in milliseconds between steps, smaller self number is, faster the motor rotates . 5 is default
-    local rotate = function ( direction, desired_steps, interval, timer_to_use, callback)
+    local rotate = function ( direction, desired_steps, interval, callback)
         motor_params.step_interval = interval -- milliseconds decides the speed. smaller the interval, higher the speed.
         motor_params.desired_steps = desired_steps
         motor_params.direction = direction
-        motor_params.timer_to_use = timer_to_use
         motor_params.callback = callback
         
         step_counter  = 0
         phase         = 1
         
-        tmr.alarm(motor_params.timer_to_use, motor_params.step_interval, REPEATING_TIMER, single_step)
+        --tmr.alarm(motor_params.timer_to_use, motor_params.step_interval, REPEATING_TIMER, single_step)
+        motor_timer:alarm(motor_params.step_interval, REPEATING_TIMER, single_step)
     end
 
     stepper = {
